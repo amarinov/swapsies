@@ -100,7 +100,7 @@ export function TokenSelect({ onChange, label = DEFAULT_SELECT_LABEL }: TokenSel
 
   return (
     <Autocomplete
-      onChange={(event, tokenValue) => {
+      onChange={(_, tokenValue) => {
         const chainValue = tokenValue ? chains![tokenValue.chainId] : null;
         onChange?.(chainValue, tokenValue)
       }}

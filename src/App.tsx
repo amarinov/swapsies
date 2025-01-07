@@ -16,11 +16,13 @@ function App() {
     <ThemeProvider theme={materialTheme}>
       <Box
           display="flex"
+          flexDirection="column"
           justifyContent="center"
           alignItems="center"
           width="100vw"
           minHeight="100vh"
         >
+        <h1>Swapsies</h1>
         <ErrorBoundary FallbackComponent={AppErrorFallback}>
           <TokenExchangeForm />
         </ErrorBoundary>

@@ -6,7 +6,7 @@ export type ChainResponse = Chain[];
 
 export type GetRoutesParams = {
   fromChainId: number
-  fromAmount: string
+  fromAmount: number
   fromTokenAddress: string
   toChainId: number
   toTokenAddress: string

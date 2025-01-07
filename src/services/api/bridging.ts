@@ -15,6 +15,6 @@ export async function getCheapestRoute(params: GetRoutesParams): Promise<Bridgin
     return cheapestRoute;
   } catch (error) {
     logger.error('Error fetching routes from API', error);
-    throw new Error('Error fetching routes from API');
+    throw new Error(`Error fetching routes from API. Reason: ${error}`);
   }
 }

@@ -3,8 +3,8 @@ class Logger {
     console.log(message);
   }
 
-  public error(message: string, error?: Error) {
-    console.error(message, error);
+  public error(message: string, meta?: unknown) {
+    console.error(message, meta);
   }
 
   public warn(message: string) {

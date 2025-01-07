@@ -1,50 +1,30 @@
-# React + TypeScript + Vite
+# Swapsies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a PoC project that previews swapping tokens from one blockchain to another using the [Li.Fi SDK](https://docs.li.fi/integrate-li.fi-sdk/li.fi-sdk-overview)
 
-Currently, two official plugins are available:
+## Install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+$ npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Run locally
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+$ npm run dev
 ```
+
+## Assumptions
+
+The following assumptions and considerations were made:
+
+1. This project is meant to serve as a Proof of Concept and demonstration of Li.Fi SDK capabilities. As such, having a fast development workflow and getting quickly to a working version was deemed important and selection of framework, tools and libraries was influenced by this. Building a stable version tailored for long-term support will result in reevaluation of the tech stack.
+2. A tool that that integrates Li.Fi already exists and could be used for demonstration purposes (if this was the only goal) - [Li.Fi Playground](https://playground.li.fi/)
+3. Free tier usage of Li.Fi is constrained by requests count. Existing implementation does not do caching of responses and debouncing of requests as it's not a core functionality, but it could lead to quickly reaching the limit and the displaying an error.
+4. There could be multiple routes that lead to swapping token A for B. It is not specified which one we need, so the existing solution only displays details about the cheapest route.
+5. Tests were explicitly listed as not required and were skipped to accomodate time constraints. However, in any project targetting live environment, tests should be mandatory.
+6. Others - to be discussed over project review call.
+
+
+## Contributing
+

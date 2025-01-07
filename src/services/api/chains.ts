@@ -7,6 +7,6 @@ export async function getChains(): Promise<ChainResponse> {
     return await sdkGetChains();
   } catch (error) {
     logger.error('Error fetching chains from API', error);
-    throw new Error('Error fetching chains from API');
+    throw new Error(`Error fetching chains from API. Reason: ${error}`);
   }
 }

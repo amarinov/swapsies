@@ -8,6 +8,6 @@ export async function getTokens(): Promise<TokensResponse> {
     return tokens;
   } catch (error) {
     logger.error('Error fetching tokens from API', error);
-    throw new Error('Error fetching tokens from API');
+    throw new Error(`Error fetching tokens from API. Reason: ${error}`);
   }
 }
